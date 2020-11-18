@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Note>
+<div>
+    @if (Model.Any())
+    {
+        <div>
+            <h3>
+                Your Notes
+            </h3>
+        </div>
+        @foreach (Note note in Model)
+        {
+            <div>
+                <a asp-action="NoteDetail" asp-route-id="@note.Id">
+                    <div>
+                        @note.Subject
+                    </div>
+                </a>
+            </div>
+        }
+    }
+    else
+    {
+
+        <div>
+            <h3>
+                You don't have any notes.
+            </h3>
+        </div>
+    }
+    <form method="post">
+        <input type="submit" asp-action="NoteBuilder" value="New Note">
+    </form>
+
+
+</div>

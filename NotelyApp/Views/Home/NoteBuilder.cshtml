@@ -3,27 +3,27 @@
 
 
 <div>
-    <form asp-action="EditNote" method="post">
+    <form asp-action="NewNote" method="post">
         <div>
 
             <div asp-validation-summary="All"></div>
 
             <div>
                 <label asp-for="Subject">Subject</label>
-                <input asp-for="Subject" value="@Model.Subject" />
+                <input asp-for="Subject" />
             </div>
 
             <div>
                 <label asp-for="Detail">Your Note</label>
-                <textarea asp-for="Detail" id="TextArea" rows="12" cols="20" value="@Model.Detail"></textarea>
+                <textarea asp-for="Detail" id="TextArea" rows="12" cols="20"></textarea>
             </div>
         </div>
 
 
-       
+
         <div>
             <button type="submit">Save Note</button>
         </div>
-        
+
     </form>
 </div>
