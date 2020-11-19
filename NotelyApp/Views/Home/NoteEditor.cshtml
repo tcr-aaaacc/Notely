@@ -10,12 +10,28 @@
 
             <div>
                 <label asp-for="Subject">Subject</label>
-                <input asp-for="Subject" value="@Model.Subject" />
+                @if (Model != null)
+                {
+                    <input asp-for="Subject" value="@Model.Subject" />
+                }
+                else
+                {
+                    <input asp-for="Subject" value="" />
+                }
+
             </div>
 
             <div>
                 <label asp-for="Detail">Your Note</label>
-                <textarea asp-for="Detail" id="TextArea" rows="12" cols="20" value="@Model.Detail"></textarea>
+                @if (Model != null)
+                {
+                    <textarea asp-for="Detail" id="TextArea" rows="12" cols="20" value="@Model.Detail"></textarea>
+                }
+                else
+                {
+                    <textarea asp-for="Detail" id="TextArea" rows="12" cols="20" value=""></textarea>
+                }
+
             </div>
         </div>
 

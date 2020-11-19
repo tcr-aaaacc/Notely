@@ -44,6 +44,7 @@ namespace NotelyApp.Controllers
         public IActionResult NoteDetail(Guid id = default)
         {
             Note note = _noteRepository.FindNoteById(id);
+
             return View(note);
         }//显示Note的具体内容
 
@@ -62,7 +63,7 @@ namespace NotelyApp.Controllers
                 var note = _noteRepository.FindNoteById(id);
                 return View(note);
             }
-            return View();
+            return RedirectToAction("NoteBuilder");
         }//显示Note的编辑页面，并将要编辑的Note显示出来
 
 
